@@ -1,0 +1,14 @@
+INFO:root:Successfully read file: D:\SriSatya Doc\purusha.mp3
+INFO:root:Time required for D:\SriSatya Doc\purusha.mp3 = 0.002983 seconds
+INFO:root:Successfully read file: D:\SriSatya Doc\purusha.mp3
+INFO:root:Time required for D:\SriSatya Doc\purusha.mp3 = 0.002983 seconds
+INFO:root:Successfully read file: D:\SriSatya Doc\Scrum.mp3
+INFO:root:Time required for D:\SriSatya Doc\Scrum.mp3 = 0.061424 seconds
+INFO:root:Successfully read file: D:\SriSatya Doc\Scrum.mp3
+INFO:root:Time required for D:\SriSatya Doc\Scrum.mp3 = 0.029844 seconds
+INFO:root:Successfully read file: D:\SriSatya Doc\Scrum.mp3
+INFO:root:Time required for D:\SriSatya Doc\Scrum.mp3 = 0.028824 seconds
+INFO:root:Time required for D:\SriSatya Doc\Scrum.mp3 = 0.000924 seconds
+ERROR:root:Failed to read file: not readable
+INFO:root:Time required for D:\SriSatya Doc\Scrum.mp3 = 0.000741 seconds
+ERROR:root:Failed to read file: not readable
