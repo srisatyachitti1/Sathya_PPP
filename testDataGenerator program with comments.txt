@@ -1,0 +1,246 @@
+# When the script is run, It creates three instances of FakeDataGenerator:
+# With the key "PA1", With a randomly selected key, With another randomly selected key.
+# For each instance, it generates and prints fake test data in JSON format.
+# Import necessary libraries
+# Imports json: For formatting the output data as JSON.
+import json
+# Imports random: For generating random choices and numbers.
+import random
+# Imports Faker: A library for generating realistic fake data, such as names, emails, and addresses.
+from faker import Faker
+
+# Constants and Dictionaries
+# --------------------------
+# Mapping short identifiers to user account descriptions
+# Constants: ID: A dictionary mapping short identifiers (like PA1, PA2) to detailed descriptions of user account types.
+ID = {
+    "PA1": "Personal_Revenue_Prepaid_Non_visitor",
+    "PA2": "Personal_Revenue_Prepaid_Visitor",
+    "PA3": "Personal_Non Revenue_Postpaid_Non_visitor",
+}
+
+# Constants: DOA (Definition of Accounts): A dictionary defining the attributes of different account types.
+DOA = {
+    "Personal_Revenue_Prepaid_Non_visitor": {
+        "accountType": "PERSONAL",
+        "category": "REVENUE",
+        "paymentModel": "PREPAID",
+        "visitor": False,
+    },
+    "Personal_Revenue_Prepaid_Visitor": {
+        "accountType": "PERSONAL",
+        "category": "REVENUE",
+        "paymentModel": "PREPAID",
+        "visitor": True,
+    },
+    "Personal_Non Revenue_Postpaid_Non_visitor": {
+        "accountType": "PERSONAL",
+        "category": "NON_REVENUE",
+        "paymentModel": "POSTPAID",
+        "visitor": False,
+    },
+}
+
+# Constants: TENANT_ID: A constant representing a tenant identifier.
+
+TENANT_ID = "10102020"
+
+# Fake Data Generator Class : This class generates test data based on the account type provided or selected randomly.
+# --------------------------
+class FakeDataGenerator:
+    """
+    A class for generating fake test data based on account types.
+    """
+    fake = Faker()
+# __init__ Method: Initializes an object with a specific doa_key or picks one randomly.
+# Logs the corresponding data attributes (doa_id, doa_data) for that key.
+
+    def __init__(self, doa_key=""):
+        """
+        Initializes the generator with a specific or random DOA key.
+        """
+        if doa_key == "":
+            self.doa_key = random.choice(list(ID.keys()))
+            print("Generating test data for DOA ID (random):", self.doa_key)
+        else:
+            self.doa_key = doa_key
+            print("Generating test data for DOA ID:", self.doa_key)
+
+        self.doa_id = ID.get(self.doa_key)
+        print("Mapped DOA description:", self.doa_id)
+
+        self.doa_data = DOA.get(self.doa_id)
+        print("DOA data attributes:", self.doa_data)
+# Methods and Properties: get_address: Generates a fake address with fields like country, state, and zipCode.
+# Address Generation
+    def get_address(self):
+        """
+        Generates a random address using Faker.
+        """
+        return {
+            "country": self.fake.country(),
+            "address1": self.fake.street_address(),
+            "address2": self.fake.street_name(),
+            "city": self.fake.city(),
+            "state": self.fake.city(),
+            "zipCode": self.fake.zipcode(),
+            "isCurrentAddress": random.choice([True, False]),
+        }
+# Methods and Properties: generate_vehicle_info: Creates random vehicle details (type, make, model, color, and license plate).
+# Vehicle Information
+    @property
+    def generate_vehicle_info(self):
+        """
+        Generates random vehicle information.
+        """
+        vehicles = ["Car", "Truck", "Motorcycle", "Bicycle", "Bus"]
+        makes = ["Toyota", "Ford", "BMW", "Honda", "Tesla"]
+        colors = ["Red", "Blue", "Green", "Black", "White"]
+        return {
+            "type": random.choice(vehicles),
+            "make": random.choice(makes),
+            "model": "Model " + str(random.randint(1, 100)),
+            "color": random.choice(colors),
+            "license_plate": "{}-{}-{}".format(
+                chr(random.randint(65, 90)),
+                random.randint(1000, 9999),
+                chr(random.randint(65, 90)),
+            ),
+        }
+# Methods and Properties: generate_toll_info: Generates details of toll transactions, including location and amount.
+# Toll Information
+    @property
+    def generate_toll_info(self):
+        """
+        Generates random toll transaction information.
+        """
+        locations = ["Highway 1", "Bridge A", "Tunnel 5", "Toll Plaza 3"]
+        return {
+            "location": random.choice(locations),
+            "amount": round(random.uniform(1.0, 50.0), 2),
+            "date": "2023-10-{} {}:{}:{}".format(
+                random.randint(1, 31),
+                random.randint(0, 23),
+                random.randint(0, 59),
+                random.randint(0, 59),
+            ),
+        }
+
+# Methods and Properties: generate_demographic_info:
+# If the account type is PERSONAL, creates demographic data like names, emails, and phone numbers.
+# If it's a business account, includes additional fields such as fleet, visitorStartDate, and companyName.
+# Demographic Information
+    @property
+    def generate_demographic_info(self):
+        """
+        Generates demographic information based on account type.
+        """
+        email = self.fake.email()
+        if "PERSONAL" in self.doa_data.get("accountType"):
+            return {
+                "name": {
+                    "prefix": self.fake.prefix(),
+                    "firstName": self.fake.first_name(),
+                    "middleName": self.fake.name().split(" ")[0],
+                    "lastName": self.fake.last_name(),
+                    "suffix": self.fake.suffix(),
+                },
+                "addressReferenceId": 0,
+                "email": email,
+                "confirmEmail": email,
+                "alternateEmail": self.fake.email(),
+                "mobileNumber": self.fake.phone_number(),
+                "phoneNumber": self.fake.phone_number(),
+                "companyName": self.fake.company(),
+                "companyCode": self.fake.random_number(5),
+            }
+        else:
+            return {
+                "accountType": "BUSINESS",
+                "category": "REVENUE",
+                "paymentModel": "PREPAID",
+                "fleet": True,
+                "subfleet": "DEALERSHIP",
+                "rentalType": "CUSTOMER_PAYS",
+                "visitor": True,
+                "visitorStartDate": "2024-10-07T09:16:29.658Z",
+                "visitorEndDate": "2024-10-07T09:16:29.658Z",
+                "name": {
+                    "prefix": "MR.",
+                    "firstName": "Rock",
+                    "middleName": "M",
+                    "lastName": "Forever",
+                    "suffix": "Sr",
+                },
+                "addressReferenceId": 0,
+                "email": "whatever@gmail.com",
+                "confirmEmail": "whatever@gmail.com",
+                "alternateEmail": "whatever12@gmail.com",
+                "mobileNumber": "9182455417",
+                "phoneNumber": "string",
+                "companyName": "ROCKER",
+                "companyCode": "9090",
+            }
+# Methods and Properties: generate_payment_card_info: Generates mock payment card data, including card number and type.
+# Payment Card Information
+    @property
+    def generate_payment_card_info(self):
+        """
+        Generates fake payment card information.
+        """
+        card_types = ["CREDIT", "DEBIT"]
+        return {
+            "cardId": "{}{}{}{}".format(
+                random.randint(1000, 9999),
+                random.randint(1000, 9999),
+                random.randint(1000, 9999),
+                random.randint(1000, 9999),
+            ),
+            "paymentMethod": random.choice(card_types),
+            "cardAlias": " ".join(self.fake.words()),
+        }
+# Methods and Properties: address_details: Returns a structured representation of billing, mailing, and shipping addresses using get_address.
+# Address Details
+    @property
+    def address_details(self):
+        """
+        Returns structured address details for billing, mailing, and shipping.
+        """
+        return {
+            "addressReferenceId": 0,
+            "billingAddress": [self.get_address()],
+            "mailingAddress": [self.get_address()],
+            "shippingAddress": [self.get_address()],
+        }
+# Methods and Properties:generate_all_data: Combines all generated data into a single JSON object for output.
+# All Data
+
+    def generate_all_data(self):
+        """
+        Combines all generated data into a structured JSON object.
+        """
+        data = {
+            "tenantId": TENANT_ID,
+            "demographicInfo": self.generate_demographic_info,
+            "addressDetails": self.address_details,
+            "paymentInfo": [
+                self.generate_payment_card_info,
+                self.generate_payment_card_info,
+            ],
+        }
+        return json.dumps(data, indent=4)
+
+# Main Execution: The __main__ block creates instances of the FakeDataGenerator class with specific and random keys (PA1 or random) and outputs the generated test data.
+# --------------
+if __name__ == "__main__":
+    # Example: Generating data for a specific key
+    testdata_1 = FakeDataGenerator("PA1")
+    print(testdata_1.generate_all_data())
+
+    # Example: Generating data for a random key
+    testdata_2 = FakeDataGenerator()
+    print(testdata_2.generate_all_data())
+
+    # Another random example
+    testdata_3 = FakeDataGenerator()
+    print(testdata_3.generate_all_data())

@@ -1,0 +1,228 @@
+C:\pythonProject\.venv\Scripts\python.exe C:\pythonProject\testDataGenerator.py 
+Generating test data for DOA ID is : PA1
+Generating test data for DOA ID is : Personal_Revenue_Prepaid_Non_visitor
+Generating test data for DOA Data is : {'accountType': 'PERSONAL', 'category': 'REVENUE', 'paymentModel': 'PREPAID', 'visitor': False}
+{
+    "tenantId": "10102020",
+    "demographicInfo": {
+        "accountType": "PERSONAL",
+        "category": "REVENUE",
+        "paymentModel": "PREPAID",
+        "visitor": false,
+        "name": {
+            "prefix": "Mx.",
+            "firstName": "Virginia",
+            "middleName": "Charles",
+            "lastName": "Johnson",
+            "suffix": "Jr."
+        },
+        "addressReferenceId": 0,
+        "email": "jeremy94@example.org",
+        "confirmEmail": "jeremy94@example.org",
+        "alternateEmail": "mstephens@example.com",
+        "mobileNumber": "784-658-5358",
+        "phoneNumber": "794-740-5119x52583",
+        "companyName": "Johnson, Klein and Richardson",
+        "companyCode": 78210
+    },
+    "addressDetails": {
+        "addressReferenceId": 0,
+        "billingAddress": [
+            {
+                "country": "Colombia",
+                "address1": "10251 Brian Brooks",
+                "address2": "Allen Ramp",
+                "city": "Courtneyside",
+                "state": "South Andrewburgh",
+                "zipCode": "10570",
+                "isCurrentAddress": true
+            }
+        ],
+        "mailingAddress": [
+            {
+                "country": "Sao Tome and Principe",
+                "address1": "831 Rachel Terrace Apt. 806",
+                "address2": "James Mills",
+                "city": "Shafferbury",
+                "state": "Taraside",
+                "zipCode": "46622",
+                "isCurrentAddress": true
+            }
+        ],
+        "shippingAddress": [
+            {
+                "country": "Luxembourg",
+                "address1": "4351 Henry Creek Suite 166",
+                "address2": "Mcintosh Turnpike",
+                "city": "Loganchester",
+                "state": "Kaylaland",
+                "zipCode": "90231",
+                "isCurrentAddress": false
+            }
+        ]
+    },
+    "paymentInfo": [
+        {
+            "cardId": "5606825410141746",
+            "paymentMethod": "DEBIT",
+            "cardAlias": "deep scientist put"
+        },
+        {
+            "cardId": "7800858212415441",
+            "paymentMethod": "DEBIT",
+            "cardAlias": "activity operation arrive"
+        }
+    ]
+}
+Generating test data for DOA ID (random) is : PA1
+Generating test data for DOA ID (random) is : Personal_Revenue_Prepaid_Non_visitor
+Generating test data for DOA Data (random) is : {'accountType': 'PERSONAL', 'category': 'REVENUE', 'paymentModel': 'PREPAID', 'visitor': False}
+{
+    "tenantId": "10102020",
+    "demographicInfo": {
+        "accountType": "PERSONAL",
+        "category": "REVENUE",
+        "paymentModel": "PREPAID",
+        "visitor": false,
+        "name": {
+            "prefix": "Mrs.",
+            "firstName": "Kelly",
+            "middleName": "Amanda",
+            "lastName": "Hart",
+            "suffix": "DDS"
+        },
+        "addressReferenceId": 0,
+        "email": "jamesschmidt@example.com",
+        "confirmEmail": "jamesschmidt@example.com",
+        "alternateEmail": "stephanie41@example.net",
+        "mobileNumber": "(948)432-7633x57093",
+        "phoneNumber": "(615)525-2745",
+        "companyName": "Rodriguez, Navarro and Reyes",
+        "companyCode": 95828
+    },
+    "addressDetails": {
+        "addressReferenceId": 0,
+        "billingAddress": [
+            {
+                "country": "Morocco",
+                "address1": "10761 Matthew Forges Suite 591",
+                "address2": "Ware Prairie",
+                "city": "Elizabethview",
+                "state": "Figueroahaven",
+                "zipCode": "84342",
+                "isCurrentAddress": true
+            }
+        ],
+        "mailingAddress": [
+            {
+                "country": "Argentina",
+                "address1": "8555 Suzanne Street Apt. 913",
+                "address2": "Hale Point",
+                "city": "Wattsshire",
+                "state": "Annmouth",
+                "zipCode": "78957",
+                "isCurrentAddress": false
+            }
+        ],
+        "shippingAddress": [
+            {
+                "country": "Cook Islands",
+                "address1": "298 Brady Cove Apt. 077",
+                "address2": "Ronnie Lane",
+                "city": "South Laura",
+                "state": "Karinastad",
+                "zipCode": "72614",
+                "isCurrentAddress": false
+            }
+        ]
+    },
+    "paymentInfo": [
+        {
+            "cardId": "1324532716733792",
+            "paymentMethod": "DEBIT",
+            "cardAlias": "arrive develop rich"
+        },
+        {
+            "cardId": "7305121792835842",
+            "paymentMethod": "DEBIT",
+            "cardAlias": "fear performance million"
+        }
+    ]
+}
+Generating test data for DOA ID (random) is : PA1
+Generating test data for DOA ID (random) is : Personal_Revenue_Prepaid_Non_visitor
+Generating test data for DOA Data (random) is : {'accountType': 'PERSONAL', 'category': 'REVENUE', 'paymentModel': 'PREPAID', 'visitor': False}
+{
+    "tenantId": "10102020",
+    "demographicInfo": {
+        "accountType": "PERSONAL",
+        "category": "REVENUE",
+        "paymentModel": "PREPAID",
+        "visitor": false,
+        "name": {
+            "prefix": "Ms.",
+            "firstName": "John",
+            "middleName": "Robert",
+            "lastName": "Davidson",
+            "suffix": "DDS"
+        },
+        "addressReferenceId": 0,
+        "email": "brittney59@example.com",
+        "confirmEmail": "brittney59@example.com",
+        "alternateEmail": "burtonkaren@example.com",
+        "mobileNumber": "+1-536-386-8336x445",
+        "phoneNumber": "001-468-918-8036x22879",
+        "companyName": "Elliott-Anderson",
+        "companyCode": 4787
+    },
+    "addressDetails": {
+        "addressReferenceId": 0,
+        "billingAddress": [
+            {
+                "country": "Nigeria",
+                "address1": "611 Corey Roads",
+                "address2": "Richards Branch",
+                "city": "Davidchester",
+                "state": "Thomasbury",
+                "zipCode": "45901",
+                "isCurrentAddress": true
+            }
+        ],
+        "mailingAddress": [
+            {
+                "country": "Congo",
+                "address1": "4558 Andrew Squares Suite 939",
+                "address2": "Clark Island",
+                "city": "Ruizland",
+                "state": "Karenfort",
+                "zipCode": "29782",
+                "isCurrentAddress": true
+            }
+        ],
+        "shippingAddress": [
+            {
+                "country": "Qatar",
+                "address1": "203 Cynthia Track",
+                "address2": "Cheryl Mount",
+                "city": "Hillchester",
+                "state": "Contrerasburgh",
+                "zipCode": "99893",
+                "isCurrentAddress": false
+            }
+        ]
+    },
+    "paymentInfo": [
+        {
+            "cardId": "3471928497098057",
+            "paymentMethod": "DEBIT",
+            "cardAlias": "reach main large"
+        },
+        {
+            "cardId": "5507642428793449",
+            "paymentMethod": "CREDIT",
+            "cardAlias": "above evidence cell"
+        }
+    ]
+}
+
+Process finished with exit code 0

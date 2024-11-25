@@ -1,0 +1,78 @@
+Key Features:
+Randomization: Randomly selects data like vehicle info, addresses, toll amounts, and card details.
+Customization: Allows data generation for specific account types (PA1, PA2, etc.).
+Faker Integration: Ensures realistic fake data for fields such as names, emails, and addresses.
+JSON Output: Provides output in JSON format, which is widely used for data exchange.
+Example Output:
+For a PA1 account type, the generated JSON might look like:
+
+json
+Copy code
+{
+    "tenantId": "10102020",
+    "demographicInfo": {
+        "name": {
+            "prefix": "Dr.",
+            "firstName": "John",
+            "middleName": "Smith",
+            "lastName": "Doe",
+            "suffix": "Jr."
+        },
+        "addressReferenceId": 0,
+        "email": "john.doe@example.com",
+        "confirmEmail": "john.doe@example.com",
+        "alternateEmail": "j.doe@example.com",
+        "mobileNumber": "+123456789",
+        "phoneNumber": "+987654321",
+        "companyName": "Doe Inc.",
+        "companyCode": "12345"
+    },
+    "addressDetails": {
+        "addressReferenceId": 0,
+        "billingAddress": [
+            {
+                "country": "USA",
+                "address1": "123 Main St",
+                "address2": "Central Ave",
+                "city": "Springfield",
+                "state": "Illinois",
+                "zipCode": "62701",
+                "isCurrentAddress": true
+            }
+        ],
+        "mailingAddress": [
+            {
+                "country": "USA",
+                "address1": "123 Main St",
+                "address2": "Central Ave",
+                "city": "Springfield",
+                "state": "Illinois",
+                "zipCode": "62701",
+                "isCurrentAddress": false
+            }
+        ],
+        "shippingAddress": [
+            {
+                "country": "USA",
+                "address1": "123 Main St",
+                "address2": "Central Ave",
+                "city": "Springfield",
+                "state": "Illinois",
+                "zipCode": "62701",
+                "isCurrentAddress": true
+            }
+        ]
+    },
+    "paymentInfo": [
+        {
+            "cardId": "1234123412341234",
+            "paymentMethod": "CREDIT",
+            "cardAlias": "Virtual Test Card"
+        },
+        {
+            "cardId": "5678567856785678",
+            "paymentMethod": "DEBIT",
+            "cardAlias": "Test Payment Card"
+        }
+    ]
+}
